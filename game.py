@@ -130,7 +130,8 @@ def main():
 
         for wheel in (motor1.b, motor2.b):
             pos = to_pygame((wheel.position.x + offset_x, wheel.position.y))
-            pygame.draw.circle(screen, COLORS["wheel"], pos, int(wheel.shapes[0].radius), 0)
+            wheel_shape = next(iter(wheel.shapes))
+            pygame.draw.circle(screen, COLORS["wheel"], pos, int(wheel_shape.radius), 0)
 
         pygame.display.flip()
 
